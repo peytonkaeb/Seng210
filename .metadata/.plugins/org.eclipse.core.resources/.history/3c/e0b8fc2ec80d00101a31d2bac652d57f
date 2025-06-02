@@ -1,0 +1,50 @@
+package guiLearning;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Driver {
+    JLabel labelName; // Image label (draggable)
+    int mouseX, mouseY; // Stores mouse click position relative to image
+
+    public static void main(String args[]) {
+        new Driver(); // Start GUI
+    }
+
+    public Driver() {
+        // Frame setup
+        JFrame frameName = new JFrame("Drag & Drop Image");
+        frameName.setLayout(null);
+        frameName.setSize(500, 500);
+        frameName.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Load image
+        ImageIcon originalIcon = new ImageIcon("C:/Users/skkae/Pictures/Camera Roll/262BAA35-1A58-49C4-BAD9-93143D22F727.jpg");
+        Image image2 = originalIcon.getImage().getScaledInstance(200, 150, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(image2);
+
+        // Label for image
+        labelName = new JLabel(resizedIcon);
+        labelName.setBounds(50, 50, 200, 150);
+        
+        // Mouse events for dragging
+        labelName.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                mouseX = e.getX();
+                mouseY = e.getY();
+            }
+        });
+
+        labelName.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+                int x = e.getXOnScreen() - mouseX;
+                int y = e.getYOnScreen() - mouseY;
+                labelName.setLocation(x - frameName.getInsets().left, y - frameName.getInsets().top);
+            }
+        });
+
+        // Add label to frame
+        frameName.add(labelName);
+        frameName.setVisible(true);
+    }
+}

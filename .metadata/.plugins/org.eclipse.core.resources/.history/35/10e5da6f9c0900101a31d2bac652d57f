@@ -1,0 +1,36 @@
+package guiLearning;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import java.awt.FlowLayout;
+import java.awt.Image; 
+
+
+public class Driver {
+    public static void main(String args[]) {
+        // Create the frame
+        JFrame frameName = new JFrame();
+        frameName.setTitle("Peyton's Pop-Up <3");
+        frameName.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameName.setSize(400, 300);
+        frameName.setLayout(new FlowLayout()); // Layout ensures proper placement
+
+        // Load and resize the image
+        ImageIcon originalIcon = new ImageIcon("C:/Users/skkae/Pictures/Camera Roll/262BAA35-1A58-49C4-BAD9-93143D22F727.jpg");
+        Image scaledImage = originalIcon.getImage().getScaledInstance(100, 75, Image.SCALE_SMOOTH); // Resized dimensions
+        ImageIcon resizedIcon = new ImageIcon(scaledImage);
+
+        // Create JLabel for the resized image
+        JLabel labelName = new JLabel();
+        labelName.setIcon(resizedIcon);
+        labelName.setText("Hello, my name is Peyton");
+        labelName.setHorizontalTextPosition(JLabel.CENTER);
+        labelName.setVerticalTextPosition(JLabel.BOTTOM);
+
+        // Add label to the frame
+        frameName.add(labelName);
+
+        // Make the frame visible
+        frameName.setVisible(true);
+    }
+}
