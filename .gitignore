@@ -1,1 +1,16 @@
+# Ignore Eclipse metadata
 .metadata/
+
+# Ignore zip, log, and lock files
+*.zip
+*.log
+*.lock
+
+# Ignore compiled class files
+*.class
+
+# Ignore Eclipse build output folder
+bin/
+
+# Ignore doc folders
+doc/
