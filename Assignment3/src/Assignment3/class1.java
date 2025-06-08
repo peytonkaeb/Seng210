@@ -31,21 +31,15 @@ public class class1 extends JFrame {
         multiTossField = new JTextField(5);
         resultArea = new JTextArea(10, 30);
         resultArea.setEditable(false);
-        resetButton = new JButton("Reset Stats");
-        add(resetButton);
-        resetButton.addActionListener(e -> {
-            totalTosses = 0;
-            headsCount = 0;
-            tailsCount = 0;
-            resultArea.setText("");
-        });
 
         add(singleTossButton);
         add(new JLabel("Number of tosses:"));
         add(multiTossField);
         add(multiTossButton);
         add(new JScrollPane(resultArea));
-        
+        resetButton = new JButton("Reset Stats");
+        add(resetButton);
+        //comment
 
         // Single toss button action
         singleTossButton.addActionListener(e -> tossCoins(1));

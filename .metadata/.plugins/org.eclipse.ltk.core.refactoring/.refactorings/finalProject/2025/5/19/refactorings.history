@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;ContactFile&apos; to &apos;finalJava/src/finalJava&apos;&#x0D;&#x0A;- Original project: &apos;finalProject&apos;&#x0D;&#x0A;- Destination element: &apos;finalJava/src/finalJava&apos;&#x0D;&#x0A;- Original element: &apos;ContactFile&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=finalJava/src&lt;finalJava" element1="src/guiLearning/ContactFile" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1746322372466" units="0" version="1.0"/>
-</session>
