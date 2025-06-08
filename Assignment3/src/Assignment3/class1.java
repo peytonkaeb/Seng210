@@ -40,6 +40,12 @@ public class class1 extends JFrame {
         resetButton = new JButton("Reset Stats");
         add(resetButton);
         //comment
+        resetButton.addActionListener(e -> {
+            totalTosses = 0;
+            headsCount = 0;
+            tailsCount = 0;
+            resultArea.setText("");
+        });
 
         // Single toss button action
         singleTossButton.addActionListener(e -> tossCoins(1));
