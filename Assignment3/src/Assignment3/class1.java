@@ -83,6 +83,14 @@ public class class1 extends JFrame {
         results.append("Total tosses: ").append(totalTosses).append("\n");
         results.append("Heads: ").append(headsCount).append("\n");
         results.append("Tails: ").append(tailsCount).append("\n");
+        String Side;
+        if(headsCount > tailsCount) {
+        	Side = "Heads";
+        }
+        else {
+        	Side = "Tails";
+        }
+        results.append("Most side tossed: ").append(Side).append("\n");
 
         resultArea.setText(results.toString());
     }
